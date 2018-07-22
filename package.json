@@ -1,0 +1,23 @@
+{
+  "name": "webpackjs",
+  "version": "1.0.0",
+  "description": "学习webpack特性",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvxiaoweiCHN/webpackJS.git"
+  },
+  "author": "lvxiaowei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lvxiaoweiCHN/webpackJS/issues"
+  },
+  "homepage": "https://github.com/lvxiaoweiCHN/webpackJS#readme",
+  "devDependencies": {
+    "webpack": "^4.16.0",
+    "webpack-cli": "^3.0.8"
+  }
+}
