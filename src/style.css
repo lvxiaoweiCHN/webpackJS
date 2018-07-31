@@ -1,1 +1,4 @@
-.hello{color: red}
+.hello{
+    color: red;
+    background: url('./potato.jpg');
+}
