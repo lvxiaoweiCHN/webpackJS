@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/lvxiaoweiCHN/webpackJS#readme",
   "devDependencies": {
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.21.0",
     "webpack": "^4.16.0",
     "webpack-cli": "^3.0.8"
   },
