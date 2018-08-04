@@ -5,17 +5,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // 清空编译目录
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+const webpack = require('webpack');
+
 module.exports = {
   mode: "development",
   entry: {
-    app: './src/index.js',
-    print: './src/print.js'
+    app: './src/index.js'
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Output Management'
-    })
+    }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
   output: {
     filename: '[name].bundle.js',
@@ -25,7 +28,8 @@ module.exports = {
   //webpack-dev-middleware 是一个容器(wrapper)，它可以把 webpack 处理后的文件传递给一个服务器(server)。 webpack-dev-server 在内部使用了它
   //可以使用webpack-dev-middleware 配合 express server来达到webpack-dev-server的目的 
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    hot:true
   },
   // 开发中使用的 source-map
   devtool: 'inline-source-map',
