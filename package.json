@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config webpack.config.js",
-    "build": "webpack"
+    "dev": "webpack-dev-server --open",
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -19,12 +21,16 @@
   },
   "homepage": "https://github.com/lvxiaoweiCHN/webpackJS#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "csv-loader": "^3.0.2",
     "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "papaparse": "^4.6.0",
     "style-loader": "^0.21.0",
     "webpack": "^4.16.0",
     "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.5",
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
