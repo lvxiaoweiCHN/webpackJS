@@ -17,7 +17,12 @@
 4. Redux HMR：无需 loader 或插件！只需对 main store 文件进行简单的修改。
 5. Angular HMR：No loader necessary! A simple change to your main NgModule file is all that's required to have full control over the HMR APIs.没有必要使用 loader！只需对主要的 NgModule 文件进行简单的修改，由 HMR API 完全控制。
 
-##n为了学会使用 tree shaking，你必须……
+## 为了学会使用 tree shaking，你必须……
 1. 使用 ES2015 模块语法（即 import 和 export）。
 2. 在项目 package.json 文件中，添加一个 "sideEffects" 入口。
 3. 引入一个能够删除未引用代码(dead code)的压缩工具(minifier)（例如 UglifyJSPlugin）。
+
+## 以下是由社区提供的，一些对于代码分离很有帮助的插件和 loaders：
+1. ExtractTextPlugin: 用于将 CSS 从主应用程序中分离。
+2. bundle-loader: 用于分离代码和延迟加载生成的 bundle。
+3. promise-loader: 类似于 bundle-loader ，但是使用的是 promises。
