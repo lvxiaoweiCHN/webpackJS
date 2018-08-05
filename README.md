@@ -26,3 +26,7 @@
 1. ExtractTextPlugin: 用于将 CSS 从主应用程序中分离。
 2. bundle-loader: 用于分离代码和延迟加载生成的 bundle。
 3. promise-loader: 类似于 bundle-loader ，但是使用的是 promises。
+
+## 动态导入
+1. import() 调用会在内部用到 promises。如果在旧有版本浏览器中使用 import()，记得使用 一个 polyfill 库（例如 es6-promise 或 promise-polyfill），来 shim Promise。
+2. import() 会返回一个 promise，因此它可以和 async 函数一起使用。但是，需要使用像 Babel 这样的预处理器和Syntax Dynamic Import Babel Plugin。

@@ -4,15 +4,17 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // 清空编译目录
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+// 渐进式网络应用程序插件
+//const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports={
     entry:{
-        app: './src/index.js'
+        index: './src/index.js'
     },
     output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist'),
-        chunkFilename: '[name].js'
+        filename: '[name].[hash].js',
+        chunkFilename: '[name].js',
+        path: path.resolve(__dirname, 'dist')
     },
     optimization: {
         splitChunks: {
@@ -41,8 +43,12 @@ module.exports={
         new HtmlWebpackPlugin({
           title: 'Production'
         }),
-        //结合长期缓存，你可能需要使用这个插件去避免 公共chunk 改变。 你也需要使用 records 去保持稳定的模块 id，例如，使用 NamedModulesPlugin 或 HashedModuleIdsPlugin。
-        new webpack.NamedModulesPlugin(),
+        // new WorkboxPlugin.GenerateSW({
+        //     // 这些选项帮助 ServiceWorkers 快速启用
+        //     // 不允许遗留任何“旧的” ServiceWorkers
+        //     clientsClaim: true,
+        //     skipWaiting: true
+        // })
     ],
     module: {
         rules: [

@@ -1,17 +1,26 @@
 import _ from 'lodash';
 import printMe from './print.js';
 import './styles.css';
+console.log("navigator before")
+console.log(navigator)
+console.log("navigator afater")
 
-if (process.env.NODE_ENV !== 'production') {
-    console.log('Looks like we are in development mode!');
-}
+// if ('serviceWorker' in navigator) {
+//     window.addEventListener('load', () => {
+//         navigator.serviceWorker.register('/service-worker.js').then(registration => {
+//             console.log('SW registered: ', registration);
+//         }).catch(registrationError => {
+//             console.log('SW registration failed: ', registrationError);
+//         });
+//     });
+// }
 
 function component() {
   var element = document.createElement('div');
   var btn = document.createElement('button');
 
-  //element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.innerHTML = "Hello webpack"
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  //element.innerHTML = "Hello webpack"
   btn.innerHTML = 'Click me and check the console!';
   btn.onclick = printMe;
 

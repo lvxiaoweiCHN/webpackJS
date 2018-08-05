@@ -6,6 +6,7 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
     mode: 'production',
     plugins: [
+        new webpack.HashedModuleIdsPlugin(),
         new UglifyJSPlugin({
             sourceMap: true
         }),
