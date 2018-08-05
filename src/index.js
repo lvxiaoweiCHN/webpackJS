@@ -22,7 +22,7 @@ document.body.appendChild(element);
 
 if (module.hot) {
   module.hot.accept('./print.js', function() {
-    //console.log('Accepting the updated printMe module!');
+    console.log('Accepting the updated printMe module!');
     document.body.removeChild(element);
     element = component(); // 重新渲染页面后，component 更新 click 事件处理
     document.body.appendChild(element);
